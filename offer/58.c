@@ -8,6 +8,7 @@
 char* reverseLeftWords(char* s, int n){
     int lth = strlen(s);
     int _lth = lth - n;
+    // 如果使用 malloc 需要初始化数据;
     char* ret = (char* )calloc(lth+1,sizeof(char));// +1 为了给 '\0'留空间
 
     for (int i=0;i<lth;i++){
