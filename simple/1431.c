@@ -1,3 +1,5 @@
+// 1431. 拥有最多糖果的孩子
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

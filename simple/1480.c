@@ -1,8 +1,9 @@
+// 1480. 一维数组的动态和
+// https://leetcode-cn.com/problems/running-sum-of-1d-array/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-// https://leetcode-cn.com/problems/running-sum-of-1d-array/
 
 int* runningSum(int* nums, int numsSize, int* returnSize);
 int* runningSum(int* nums, int numsSize, int* returnSize){
