@@ -29,7 +29,7 @@ struct ListNode {
 int getDecimalValue(struct ListNode* head){
     int number=0;
     struct ListNode*p=head;
-
+    // 每次的本身乘以当前的进制
     while(p!=NULL)
     {
         number=number*2+p->val;
