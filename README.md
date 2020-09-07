@@ -2,7 +2,7 @@
 
 学习学习
 
-### 链表模板
+### 1链表模板
 ```c
 #include <stdlib.h>
 #include <stdio.h>
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 
 ```
 
-### 1维数组模板
+### 2维数组模板
 ```c
 int main(int argc, char const *argv[])
 {
@@ -51,6 +51,55 @@ int main(int argc, char const *argv[])
         printf("-> %d,", aa[i]);
     }
     printf("\n");
+    return 0;
+}
+```
+
+
+### 3二叉树模板
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+void preOrder(struct TreeNode* T)
+{
+    if(T != NULL) {
+        printf("%d ", T->val);  //访问根节点
+        preOrder(T->left);    //先根序遍历左子树
+        preOrder(T->right);    //先根序遍历右子树
+    }
+}
+
+
+int main(int argc, char const *argv[])
+{
+    struct TreeNode* root = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->val = 4;
+
+    struct TreeNode* l;
+    struct TreeNode* r;
+    root->left = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->right = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->left->val = 2;
+    root->right->val = 7;
+
+    root->left->left = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->left->right = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->left->left->val = 1;
+    root->left->right->val = 3;
+
+    root->right->left = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->right->left->val = 6;
+    root->right->right = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->right->right->val = 9;
+
+    preOrder(root);
     return 0;
 }
 ```
