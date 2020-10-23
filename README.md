@@ -38,6 +38,8 @@ int main(int argc, char const *argv[])
 
 ### 2维数组模板
 ```c
+#include <stdio.h>
+#include <stdlib.h>
 int main(int argc, char const *argv[])
 {
     int numsSize = 4;
