@@ -105,3 +105,29 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
+
+
+
+# 检查
+
+```sh
+gcc -O -g -fsanitize=address 0752.c && ./a.out
+
+```
+
+# 字符串常用
+```c
+// 判断字符串相等
+int isEquals(char* a, char* b){
+    int aLth = strlen(a);
+    int bLth = strlen(b);
+    if (aLth!=bLth) return 0;
+
+    int lth = aLth<bLth?aLth:bLth;
+    for (int i=0;i<lth;i++){
+        if (a[i]!=b[i]) return 0;
+    }
+    return 1;
+}
+
+```
