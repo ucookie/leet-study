@@ -131,3 +131,34 @@ int isEquals(char* a, char* b){
 }
 
 ```
+
+# 字符串使用2
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* reverseLeftWords(char* s, int n){
+    int lth = strlen(s);
+    int _lth = lth - n;
+    // 如果使用 malloc 需要初始化数据;
+    char* ret = (char* )calloc(lth+1,sizeof(char));// +1 为了给 '\0'留空间
+
+    // 拷贝指定长度数据
+    strncat(ret, s+start, len);
+    return ret;
+}
+
+int main(int argc, char const *argv[])
+{
+    char* s = "lrloseumgh";
+    int n = 6;
+
+    char* aa = reverseLeftWords(s, n);
+    for (int i=0;i<strlen(s);i++){
+        printf("%c", aa[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
