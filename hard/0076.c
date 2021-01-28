@@ -84,11 +84,11 @@ char * minWindow(char* s, char* t){
 
 int main(int argc, char const *argv[])
 {
-    // char* s = "ADOBECODEBANC";
-    // char* t = "ABC";
+    char* s = "ADOBECODEBANC";
+    char* t = "ABC";
 
-    char* s = "aa";
-    char* t = "aa";
+    // char* s = "aa";
+    // char* t = "aa";
 
     // char* s = "acbbaca";
     // char* t = "aba";
