@@ -22,12 +22,14 @@
 #include <string.h>
 
 int* findAnagrams(char* s, char* p, int* returnSize){
-    int idx_lth = 2;
-    *returnSize = idx_lth;
+    int idx_lth = 0;
 
+
+
+    *returnSize = idx_lth;
     int* idx_list = (int*)malloc(idx_lth*sizeof(int));
-    // idx_list[0] = 0;
-    // idx_list[1] = 1;
+
+
     return idx_list;
 }
 
@@ -38,8 +40,9 @@ int main(int argc, char const *argv[])
     int* returnSize;
 
     int* aa = findAnagrams(s, p, returnSize);
-    // for (int i=0;i<*returnSize;i++){
-    //     printf("%d,", aa[i]);
-    // }
+    for (int i=0;i<*returnSize;i++){
+        printf("%d,", aa[i]);
+    }
+    printf("\n");
     return 0;
 }
