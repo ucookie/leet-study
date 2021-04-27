@@ -44,7 +44,22 @@ int findBound(int* nums, int numsSize, int target, int isLeft){
 
 int* searchRange(int* nums, int numsSize, int target, int* returnSize){
     int lth = 2;
+    *returnSize = 2;
+    int* ret = (int*)malloc(lth*sizeof(int));
+    ret[0] = findBound(nums, numsSize, target, 1);
+    ret[1] = findBound(nums, numsSize, target, 0);
+    return ret;
+}
+
+void searchRange2(int* returnSize){
+    int lth = 2;
     *returnSize = lth;
+}
+
+int* searchRange3(int* nums, int numsSize, int target, int* returnSize){
+    int lth = 2;
+    *returnSize = 2;
+    printf("2->%p\n", returnSize);
     int* ret = (int*)malloc(lth*sizeof(int));
     ret[0] = findBound(nums, numsSize, target, 1);
     ret[1] = findBound(nums, numsSize, target, 0);
@@ -69,10 +84,14 @@ int main(int argc, char const *argv[])
     nums[0] = 1;
 
     int *returnSize;
-    int *aa = searchRange(nums, numsSize, 1, returnSize);
-    for (int i=0;i<*returnSize;i++){
-        printf("-> %d,", aa[i]);
-    }
+    // searchRange2(returnSize);
+    printf("1->%p\n", returnSize);
+    int* aa= searchRange3(nums, numsSize, 1, returnSize);
+    printf("3->%p\n", returnSize);
+    // int *aa = searchRange(nums, numsSize, 1, returnSize);
+    // for (int i=0;i<*returnSize;i++){
+    //     printf("-> %d,", aa[i]);
+    // }
 
     printf("\n");
     return 0;

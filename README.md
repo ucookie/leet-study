@@ -35,11 +35,11 @@ int main(int argc, char const *argv[])
 }
 
 ```
-
-### 2维数组模板
+### 1维度数组
 ```c
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(int argc, char const *argv[])
 {
     int numsSize = 4;
@@ -54,6 +54,32 @@ int main(int argc, char const *argv[])
     }
     printf("\n");
     return 0;
+}
+
+```
+### 2维数组模板
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char const *argv[])
+{
+    int intervals = 3;
+    int** nums = (int**)malloc(intervals*sizeof(int*));
+    for (int i=0;i<intervals;i++){
+        nums[i]=(int *)malloc(sizeof(int) * 2);
+    }
+    nums[0][0]=1;
+    nums[0][1]=4;
+    nums[1][0]=3;
+    nums[1][1]=6;
+    nums[2][0]=2;
+    nums[2][1]=8;
+    for (int i=0;i<3;i++){
+        for(int j=0;j<2;j++){
+            printf("%d",nums[i][j]);
+        }
+    }
 }
 ```
 
@@ -161,4 +187,22 @@ int main(int argc, char const *argv[])
     printf("\n");
     return 0;
 }
+```
+
+
+## 内部函数
+```c
+// 快速排序
+int Compare(const void* a, const void* b)
+{
+    int** a1 = (int**)a;
+    int** b1 = (int**)b;
+    // 起点相同的时候, 按照终点降序
+    if (a1[0][0] == b1[0][0]) {
+        return b1[0][1] - a1[0][1];
+    }
+    return a1[0][0] - b1[0][0];
+}
+int** intervals, int intervalsSize
+qsort(intervals, intervalsSize, sizeof(int*), Compare);
 ```
