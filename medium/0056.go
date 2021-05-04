@@ -42,11 +42,7 @@ func merge(intervals [][]int) [][]int {
 }
 
 func main() {
-	var intervals = [][]int{}
-	intervals = append(intervals, []int{1, 3})
-	intervals = append(intervals, []int{2, 6})
-	intervals = append(intervals, []int{8, 10})
-	intervals = append(intervals, []int{15, 18})
+	var intervals = [][]int{[]int{1, 3}, []int{2, 6}, []int{8, 10}, []int{15, 18}}
 	aa := merge(intervals)
 
 	fmt.Println(">>>", aa)
