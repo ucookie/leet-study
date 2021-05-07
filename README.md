@@ -206,3 +206,48 @@ int Compare(const void* a, const void* b)
 int** intervals, int intervalsSize
 qsort(intervals, intervalsSize, sizeof(int*), Compare);
 ```
+
+
+```go
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func print(root *TreeNode) {
+	if root == nil {
+		return
+	}
+
+	print(root.Left)
+	fmt.Printf("%d, ", root.Val)
+	print(root.Right)
+}
+
+func main() {
+	root := &TreeNode{
+		Val: 4,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 1,
+			},
+			Right: &TreeNode{
+				Val: 3,
+			},
+		},
+		Right: &TreeNode{
+			Val: 7,
+			Left: &TreeNode{
+				Val: 6,
+			},
+			Right: &TreeNode{
+				Val: 9,
+			},
+		},
+	}
+
+	print(root)
+}
+```
