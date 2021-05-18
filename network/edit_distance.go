@@ -1,3 +1,34 @@
+/*
+
+给定两个字符串s1和S2,计算出将s1转换成S2所使用的最少操作数o
+
+你可以对一个字符串憾行如下三种操作：
+
+ 1 .插入一个字符
+ 2. 删除一个字符
+ 3. 替换一个字符
+
+示例1：
+
+ 输入：si = "horse", s2 = "ros"
+ 输出：3
+ 解释：
+ horse -> rorse （将'h'替换为'r'）
+ rorse -> rose （删除'r'）
+ rose -> ros （删除'e'）
+
+示例2：
+
+ 输入：si = "intention", s2 = "execution"
+ 输出：5
+ 解释：
+ intention -> inention （删除't'）
+ inention -> enention （将'i'替换为'e'）
+ enention -> exention （将'n'替换为'x'）
+ exention -> exection （将'n'替换为'c'）
+ exection -> execution （插入 'u'）
+
+*/
 package main
 
 import (
