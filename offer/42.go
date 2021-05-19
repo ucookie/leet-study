@@ -40,7 +40,6 @@ func maxSubArray(nums []int) int {
 		if dp > maxNum {
 			maxNum = dp
 		}
-		fmt.Println(">>", maxNum)
 	}
 
 	return maxNum
