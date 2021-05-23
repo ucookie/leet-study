@@ -62,8 +62,35 @@ func canPartition2(nums []int) bool {
 	return dp[sum]
 }
 
+func canPartition3(nums []int) bool {
+	var sum int
+
+	for _, v := range nums {
+		sum += v
+	}
+	if (sum % 2) != 0 {
+		return false
+	}
+
+	sum = sum / 2
+	dp := []bool{true}
+	for j := 0; j <= sum; j++ {
+		dp = append(dp, false)
+	}
+
+	lth := len(nums)
+	for i := 0; i < lth; i++ {
+		for j := sum; j >= 0; j-- {
+			if j-nums[i] >= 0 {
+				dp[j] = dp[j] || dp[j-nums[i]]
+			}
+		}
+	}
+	return dp[sum]
+}
+
 func main() {
 	nums := []int{1, 5, 11, 5}
-	aa := canPartition2(nums)
+	aa := canPartition3(nums)
 	fmt.Println("->", aa)
 }
